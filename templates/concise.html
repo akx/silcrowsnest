@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @page { size: A4 }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        div {
+            padding: .5em;
+            margin: .5em;
+            border: thin dotted black;
+            text-align: center;
+
+        }
+        img {
+            height: 5em;
+            max-width: 5em;
+        }
+    </style>
+</head>
+<body>
+<main>
+    {% for group in groups %}
+    <div>
+        <img src="./images/ph/{{ group.phash }}.png"><br>
+        {{ group.phash }} ({{ group.filenames|length }})
+    </div>
+    {% endfor %}
+</main>
+</body>
+</html>

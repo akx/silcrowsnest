@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img {
+            height: 60px;
+            max-width: 60px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    {% for group in groups %}
+    <tr>
+        <td><img src="./images/ph/{{ group.phash }}.png"></td>
+        <td>{% for name in group.filenames %}<span>{{ name }}</span> {% endfor %}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
